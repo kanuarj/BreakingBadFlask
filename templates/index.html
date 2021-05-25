@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <title>BrBa Application</title>
+    <link rel="shortcut icon" href="../static/images/logo.png" >
+    <style>
+        body {
+            background-image: url('../static/images/bb.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .card {
+            background-color: darkolivegreen;
+            color: floralwhite;
+        }
+
+    </style>
+</head>
+<body>
+    {% for cl in content_list %}
+    <div class="card sticky-top" style="width: 18rem;">
+        <img class="card-img-top" src="{{cl.img}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{cl.name}}</h5>
+          <hr>
+          <p class="card-text">DOB : {{cl.birthday}}</p>
+          <p class="card-text">Nickname : {{cl.nickname}}</p>
+          <p class="card-text">Status : {{cl.status}}</p>
+        </div>
+    </div>
+    {% endfor %}
+ 
+    
+</body>
+</html>
